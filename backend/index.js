@@ -1,10 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const { createToDo, editToDo } = require("./types");
 const { todo } = require("./db");
 
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("<h1>Todo App</h1>");
 });
