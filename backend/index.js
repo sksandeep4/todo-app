@@ -36,7 +36,7 @@ app.put("/completed", async (req, res) => {
     res.status(411).json({ msg: "Wrong Input Entered" });
     return;
   }
-  await todo.update({ _id: req.body.id }, { completed: true });
+  await todo.updateOne({ _id: req.body.id }, { completed: true });
 
   res.json({ msg: "Todo was updated" });
 });
